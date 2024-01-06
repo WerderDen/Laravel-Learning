@@ -17,3 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/getDocumentRoot', function () {
+    return $_SERVER['DOCUMENT_ROOT'];
+});
+
+Route::get('/getRandomNumber', function () {
+    return random_int(0,1001);
+});
