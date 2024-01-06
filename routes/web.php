@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/getDocumentRoot', function () {
-    return $_SERVER['DOCUMENT_ROOT'];
-});
+Route::get('/getDocumentRoot', [\App\Http\Controllers\MyPlaceController::class, 'indexDocumentRoot']);
 
-Route::get('/getRandomNumber', function () {
-    return random_int(0,1001);
-});
+Route::get('/getRandomNumber', [\App\Http\Controllers\MyNumberController::class, 'indexRandomNumber']);
